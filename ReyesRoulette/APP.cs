@@ -11,8 +11,22 @@ namespace ReyesRoulette
         //Method that starts the game and is called in the Main Method.
         public void Task()
         {
+            Console.WriteLine("Welcome to Reyes Roulette. \nFist part of this game is to pick a number or Color.");
+
+
+            Console.WriteLine("\nWelcome.\nThese ar your diffrenct options to make the game work:");
+
+            Console.WriteLine("\n1. Numbers: the number of the bin " + "\n2. Evens/Odds: even or odd numbers " + "\n3. Reds/Blacks: red or black numbers " +
+
+                    "\n4. Lows/Highs: low or high numbers. " + "\n5. Dozens: row thirds. " + "\n6. Columns: First, second, or third columns" +
+
+                    "\n7. Street: rows. " + "\n8. 6 Numbers: double rows. " + "\n9. Split: at the edge of any two contiguous numbers. " +
+
+                    "\n10. Corner: at the intersection of any four contiguous numbers.");
+
+            Console.WriteLine();
             //GameCode.start();
-  
+
         }
 
         //Method that gives you the option to play the game again or quit.

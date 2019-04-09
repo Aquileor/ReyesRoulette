@@ -11,23 +11,12 @@ namespace ReyesRoulette
     {
         public static void start()
         {
-            Console.WriteLine("Welcome to Reyes Roulette. \nFist part of this game is to pic a number or Color.");
-            Console.WriteLine("Welcome.\n These ar your diffrenct options to make the game work");
-
-            Console.WriteLine("\n1. Numbers: the number of the bin " + "2. Evens/Odds: even or odd numbers " + "3. Reds/Blacks: red or black numbers " +
-
-                    "\n4. Lows/Highs: low or high numbers. " + "5. Dozens: row thirds. " + "6. Columns: First, second, or third columns" +
-
-                    "\n7. Street: rows. " + "8. 6 Numbers: double rows. " + "9. Split: at the edge of any two contiguous numbers. " +
-
-                    "\n10. Corner: at the intersection of any four contiguous numbers.");
-
-            Console.WriteLine();
+           
             /*
             1. Numbers: the number of the bin
             2. Evens/Odds: even or odd numbers
             3. Reds/Blacks: red or black colored numbers
-            4. Lows/Highs: low (1 { 18) or high (19 { 38) numbers.
+            4. Lows/Highs: low (1 { 18) or high (19 { 38) numbers. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
             5. Dozens: row thirds, 1 { 12, 13 { 24, 25 { 36
             6. Columns: rst, second, or third columns
             7. Street: rows, e.g., 1/2/3 or 22/23/24
@@ -90,7 +79,41 @@ namespace ReyesRoulette
 
                     break;
 
+                case 2:
 
+                    break;
+
+                case 3:
+
+                    break;
+
+                case 4:
+
+                    break;
+
+                case 5:
+
+                    break;
+
+                case 6:
+
+                    break;
+
+                case 7:
+
+                    break;
+
+                case 8:
+
+                    break;
+
+                case 9:
+
+                    break;
+
+                case 10:
+
+                    break;
                 default:
 
                     Console.Clear();
