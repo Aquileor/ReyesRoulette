@@ -10,7 +10,7 @@ You are to write a program that models a roulette wheel. The ball can fall rando
 one of 38 di erent bins.You are to calculate all the winning bets according to the bin the ball falls into.
 */
 
-//Mathods are called into the Main Method from othere classes.
+//Methods are called into the Main Method from othere classes.
 namespace ReyesRoulette
 {
     class Program

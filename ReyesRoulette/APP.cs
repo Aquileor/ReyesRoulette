@@ -10,9 +10,9 @@ namespace ReyesRoulette
     {
         //Method that starts the game and is called in the Main Method.
         public void Task()
-        { Console.WriteLine("Welcome to Reyes Roulette. \nFist part of this game is to pic a number or Color.");
-
-           
+        {
+            //GameCode.start();
+  
         }
 
         //Method that gives you the option to play the game again or quit.
