@@ -26,14 +26,18 @@ namespace ReyesRoulette
 
         */
 
-            Console.WriteLine("\n1. Start random number generator " + "2. Quit");
-            Console.WriteLine();
+            //Console.WriteLine("\n1. Start random number generator " + "2. Quit");
+            //Console.WriteLine();
             //Console.Clear();
+           // int me = Convert.ToInt32(Console.ReadLine());
 
-            Random gameDice = new Random();
-            int game = gameDice.Next(0, 37);
-            Console.WriteLine($"{ game}");
-            Console.ReadKey();
+            //new GameCode().start();
+
+           //Console.WriteLine();
+
+            //Console.WriteLine("Press Enter:");
+          
+   
             //GameCode.start();
 
         }
