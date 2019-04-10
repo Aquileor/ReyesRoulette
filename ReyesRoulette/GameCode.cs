@@ -11,21 +11,12 @@ namespace ReyesRoulette
     {
         public static void start()
         {
-           
-            /*
-            1. Numbers: the number of the bin
-            2. Evens/Odds: even or odd numbers
-            3. Reds/Blacks: red or black colored numbers
-            4. Lows/Highs: low (1 { 18) or high (19 { 38) numbers. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
-            5. Dozens: row thirds, 1 { 12, 13 { 24, 25 { 36
-            6. Columns: rst, second, or third columns
-            7. Street: rows, e.g., 1/2/3 or 22/23/24
-            8. 6 Numbers: double rows, e.g., 1/2/3/4/5/6 or 22/23/24/25/26/26
-            9. Split: at the edge of any two contiguous numbers, e.g., 1/2, 11/14, and 35/36
-            10. Corner: at the intersection of any four contiguous numbers, e.g., 1/2/4/5, or 23/24/26/27
-            }
-            */
 
+           
+            Random gameDice = new Random();
+            int game = gameDice.Next(0, 37);
+            Console.ReadKey();
+            //make an if else statment for this
             /*
              00 Green
              1 Red
@@ -69,48 +60,71 @@ namespace ReyesRoulette
         }
 
 
-        public  void Options(int choice)
+        /*
+           //1. Numbers: the number of the bin
+           //2. Evens/Odds: even or odd numbers
+           //3. Reds/Blacks: red or black colored numbers
+           //4. Lows/Highs: low (1 { 18) or high (19 { 38) numbers. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
+           //5. Dozens: row thirds, 1 { 12, 13 { 24, 25 { 36
+           //6. Columns: rst, second, or third columns
+           //7. Street: rows, e.g., 1/2/3 or 22/23/24
+           //8. 6 Numbers: double rows, e.g., 1/2/3/4/5/6 or 22/23/24/25/26/26
+           //9. Split: at the edge of any two contiguous numbers, e.g., 1/2, 11/14, and 35/36
+           //10. Corner: at the intersection of any four contiguous numbers, e.g., 1/2/4/5, or 23/24/26/27
+           }
+           */
+
+        public void Options(int choice)
 
         {
             switch (choice)
             {
-
+                //1. Numbers: the number of the bin
                 case 1:
 
                     break;
 
+                //2. Evens/Odds: even or odd numbers
                 case 2:
 
                     break;
 
+                //3. Reds/Blacks: red or black colored numbers
                 case 3:
 
                     break;
 
+                //4. Lows/Highs: low (1 { 18) or high (19 { 38) numbers. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
                 case 4:
 
                     break;
 
+                //5. Dozens: row thirds, 1 { 12, 13 { 24, 25 { 36
                 case 5:
 
                     break;
 
+                //6. Columns: rst, second, or third columns
                 case 6:
 
                     break;
 
+                //7. Street: rows, e.g., 1/2/3 or 22/23/24
                 case 7:
 
                     break;
 
+                //8. 6 Numbers: double rows, e.g., 1/2/3/4/5/6 or 22/23/24/25/26/26
                 case 8:
 
                     break;
 
+                //9. Split: at the edge of any two contiguous numbers, e.g., 1/2, 11/14, and 35/36
                 case 9:
 
                     break;
 
+                //10. Corner: at the intersection of any four contiguous numbers, e.g., 1/2/4/5, or 23/24/26/27
                 case 10:
 
                     break;
