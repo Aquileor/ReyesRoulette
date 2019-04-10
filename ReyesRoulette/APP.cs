@@ -9,10 +9,16 @@ namespace ReyesRoulette
     class APP
     {
         //Method that starts the game and is called in the Main Method.
+
         public void Task()
         {
-            Console.WriteLine("Welcome to Reyes Roulette. \nSelect from the option below: ");
+            Console.WriteLine("Welcome to Reyes Roulette. \nSelect from the option below: \n");
 
+           
+            new GameCode().start();
+
+            Console.WriteLine("\nThe bets that you would win based off of your number generated is: ");
+            new GameCode().IfElse();
 
             /*
 
@@ -22,23 +28,24 @@ namespace ReyesRoulette
 
                         "\n7. Street: rows. " + "\n8. 6 Numbers: double rows. " + "\n9. Split: at the edge of any two contiguous numbers. " +
 
-                        "\n10. Corner: at the intersection of any four contiguous numbers.");
+                      "\n10. Corner: at the intersection of any four contiguous numbers.");
 
         */
 
-            //Console.WriteLine("\n1. Start random number generator " + "2. Quit");
-            //Console.WriteLine();
-            //Console.Clear();
-           // int me = Convert.ToInt32(Console.ReadLine());
+            /*
+             Console.WriteLine("\n1. Start random number generator " + "2. Quit");
+            Console.WriteLine();
+           Console.Clear();
+            int me = Convert.ToInt32(Console.ReadLine());
 
-            //new GameCode().start();
+            new GameCode().start();
 
-           //Console.WriteLine();
+           Console.WriteLine();
 
-            //Console.WriteLine("Press Enter:");
+            Console.WriteLine("Press Enter:");
           
-   
-            //GameCode.start();
+            GameCode.start();
+            */
 
         }
 

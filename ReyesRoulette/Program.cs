@@ -18,7 +18,7 @@ namespace ReyesRoulette
         static void Main(string[] args)
         {
             new APP().Task();
-            new GameCode().start();
+            
         }
     }
 }

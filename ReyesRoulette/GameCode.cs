@@ -14,21 +14,23 @@ namespace ReyesRoulette
         {
             string Gender = " ";
 
-          //  bool check = false;
+            //  bool check = false;
 
 
             {
                 Console.WriteLine("\n1. Start random number generator " + "2. Quit");
+                Console.Write("My option is: ");
                 Gender = Console.ReadLine();
 
                 switch (Gender)
                 {
                     //1. Numbers: the number of the bin
                     case "1":
-                        Random gameDice = new Random();
-                        int game = gameDice.Next(0, 37);
-                        Console.WriteLine($"{ game}");
-//                        Console.ReadKey();
+
+                        // Console.ReadKey();
+                        num();
+                       // RouletteNum();
+                       // RouletteColor();
 
                         //check = true;
 
@@ -42,7 +44,9 @@ namespace ReyesRoulette
                         break;
 
                     default:
-                        Console.WriteLine("Invalid Selection");
+                        Console.Clear();
+                        Console.WriteLine("Invalid Selection. Re Enter an oprtion from the options below.");
+                        start();
                         //check = false;
                         break;
 
@@ -91,40 +95,152 @@ namespace ReyesRoulette
                 }
 
             }
-           // return Gender;
+            // return Gender;
         }
 
 
-            /*
-               //1. Numbers: the number of the bin
-               //2. Evens/Odds: even or odd numbers
-               //3. Reds/Blacks: red or black colored numbers
-               //4. Lows/Highs: low (1 { 18) or high (19 { 38) numbers. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
-               //5. Dozens: row thirds, 1 { 12, 13 { 24, 25 { 36
-               //6. Columns: rst, second, or third columns
-               //7. Street: rows, e.g., 1/2/3 or 22/23/24
-               //8. 6 Numbers: double rows, e.g., 1/2/3/4/5/6 or 22/23/24/25/26/26
-               //9. Split: at the edge of any two contiguous numbers, e.g., 1/2, 11/14, and 35/36
-               //10. Corner: at the intersection of any four contiguous numbers, e.g., 1/2/4/5, or 23/24/26/27
-               }
-               */
+        public static int RandoNum()
+        {
+            Random random = new Random();
+            int ran = random.Next(0, 37);
+            return ran;
+        }
+        public static char RandoCol()
+        {
+            Random random = new Random();
+
+            int ran = random.Next(0, 37);
+            char wheelcolor = (char)(ran);
+            return wheelcolor;
+        }
+        public static int RouletteNum()
+        {
+            int[] wheelNumbers = new int[] { 0, 00, 30, 7, 32, 5, 34, 3, 36, 1, 27,
+                                             25, 12, 19, 18, 21, 16, 23, 14, 11, 20, 32, 17,
+                                             22, 15, 24, 13, 10, 29, 8, 31, 6, 33, 4, 35, 2 };
 
 
+            Console.WriteLine($"number is: {wheelNumbers[RandoNum()]}");
+           return wheelNumbers[RandoNum()];
+
+        }
+        public static char RouletteColor()
+        {
+            char[] colorWheel = new char[] { 'G','G', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
+                                             'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'B', 'B', 'B', 'B', 'B',
+                                             'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B' };
+            Console.WriteLine($"number is: {colorWheel[RandoCol()]}");
+            return colorWheel[RandoCol()];
+        }
         
+        public void num()
+        {
+            Console.Clear();
+            Random gameDice = new Random();
+            int game = gameDice.Next(0, 37);
+            Console.WriteLine($"\nThe random number generated is: {game}");
+            
+        }
+        public void color()
+        {
+            Random color = new Random();
+            int game = color.Next(0, 37);
+            char colors = (char)(game);       
+
+        }
+
+ 
+        
+        /*
+        public static int RouletteNum()
+
+        {
+
+            int[] wheelNumbers = new int[] { 30, 7, 32, 5, 34, 3, 36, 1, 27, 25, 12, 19, 18, 21, 16, 23, 14, 11, 20, 32, 17, 22, 15, 24, 13, 10, 29, 8, 31, 6, 33, 4, 35, 2, 0, 00 };
+
+           return wheelNumbers[num()];
+
+        }
+
+        public static char RouletteColor()
+
+        {
+
+            char[] colorWheel = new char[] { 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'g', 'g' };
+            
+            return colorWheel[color()];
+
+        }
+        */
+
+
+        /*
+           //1. Numbers: the number of the bin
+           //2. Evens/Odds: even or odd numbers
+           //3. Reds/Blacks: red or black colored numbers
+           //4. Lows/Highs: low (1 { 18) or high (19 { 38) numbers. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
+           //5. Dozens: row thirds, 1 { 12, 13 { 24, 25 { 36
+           //6. Columns: rst, second, or third columns
+           //7. Street: rows, e.g., 1/2/3 or 22/23/24
+           //8. 6 Numbers: double rows, e.g., 1/2/3/4/5/6 or 22/23/24/25/26/26
+           //9. Split: at the edge of any two contiguous numbers, e.g., 1/2, 11/14, and 35/36
+           //10. Corner: at the intersection of any four contiguous numbers, e.g., 1/2/4/5, or 23/24/26/27
+           }
+           */
+public void IfElse()
+        {
+            int temp = RouletteNum();
+
+            // int bet = Convert.ToInt32(Console.ReadLine());
+           // Console.WriteLine("The number on the wheel is " + temp);
+
+
+            if (temp % 2 == 0)//even 
+            {
+                Console.WriteLine($"You would win based off  being even!");
+            }
+
+            else
+            {
+                Console.WriteLine($"Would Win if you bet odds.");
+            }
+
+        }
+
+
         public void Options(int choice)
 
         {
+            Console.WriteLine("Possible wining outcomes are: ");
+
             switch (choice)
             {
                 //1. Numbers: the number of the bin
                 case 1:
+                    
 
-                    break;
 
                 //2. Evens/Odds: even or odd numbers
                 case 2:
+                    //2. Evens/Odds: even or odd numbers
+                    int temp = RouletteNum();
 
+                   // int bet = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("The number on the wheel is " + temp);
+
+
+                    if (temp % 2 == 0)//even 
+                    {
+                        Console.WriteLine($"You won based off od being even!");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine($"You lost!");
+                    }
+                    //PlayAgain();
                     break;
+
 
                 //3. Reds/Blacks: red or black colored numbers
                 case 3:
