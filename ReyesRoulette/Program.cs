@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 Reyes Aquileo
 4/9/19
 You are to write a program that models a roulette wheel. The ball can fall randomly into
-one of 38 di erent bins.You are to calculate all the winning bets according to the bin the ball falls into.
+one of 38 different bins.You are to calculate all the winning bets according to the bin the ball falls into.
 */
 
 //Methods are called into the Main Method from othere classes.
@@ -18,7 +18,6 @@ namespace ReyesRoulette
         static void Main(string[] args)
         {
             new APP().Task();
-            
         }
     }
 }
