@@ -10,102 +10,13 @@ namespace ReyesRoulette
     class GameCode
     {
 
-        public void start()
-        {
-            string Gender = " ";
-
-            //  bool check = false;
-
-
-            {
-                Console.WriteLine("\n1. Start random number generator " + "2. Quit");
-                Console.Write("My option is: ");
-                Gender = Console.ReadLine();
-
-                switch (Gender)
-                {
-                    //1. Numbers: the number of the bin
-                    case "1":
-
-                        // Console.ReadKey();
-                        num();
-                       // RouletteNum();
-                       // RouletteColor();
-
-                        //check = true;
-
-                        break;
-
-                    //2. Evens/Odds: even or odd numbers
-                    case "2":
-
-                        Console.WriteLine("Sorry. Thanks for playing.");
-                        //check = false;
-                        break;
-
-                    default:
-                        Console.Clear();
-                        Console.WriteLine("Invalid Selection. Re Enter an oprtion from the options below.");
-                        start();
-                        //check = false;
-                        break;
-
-
-                        //make an if else statment for this
-                        /*
-                         00 Green
-                         1 Red
-                         2 Black
-                         3 Red
-                         4 Black
-                         5 Red
-                         6 Black
-                         7 Red
-                         8 Black
-                         9 Red
-                         10 Black
-                         11 Red
-                         12 Black
-                         13 Red
-                         14 Black
-                         15 Red
-                         16 Black
-                         17 Red
-                         18 Black
-                         19 Red
-                         20 Black
-                         21 Red
-                         22 Black
-                         23 Red
-                         24 Black
-                         25 Red
-                         26 Black
-                         27 Red
-                         28 Black
-                         29 Red
-                         30 Black
-                         31 Red
-                         32 Black
-                         33 Red
-                         34 Black
-                         35 Red
-                         36 Black
-                         00 Green
-                         */
-                }
-
-            }
-            // return Gender;
-        }
-
-
-        public static int RandoNum()
+        public static int NumberGenerator()
         {
             Random random = new Random();
             int ran = random.Next(0, 37);
             return ran;
         }
-        public static char RandoCol()
+        public static char ColorGenerator()
         {
             Random random = new Random();
 
@@ -113,24 +24,24 @@ namespace ReyesRoulette
             char wheelcolor = (char)(ran);
             return wheelcolor;
         }
-        public static int RouletteNum()
+        public static int ReyesRouletteNumbers()
         {
             int[] wheelNumbers = new int[] { 0, 00, 30, 7, 32, 5, 34, 3, 36, 1, 27,
                                              25, 12, 19, 18, 21, 16, 23, 14, 11, 20, 32, 17,
                                              22, 15, 24, 13, 10, 29, 8, 31, 6, 33, 4, 35, 2 };
 
 
-            Console.WriteLine($"number is: {wheelNumbers[RandoNum()]}");
-           return wheelNumbers[RandoNum()];
+         //   Console.WriteLine($"number is: {wheelNumbers[RandoNum()]}");
+           return wheelNumbers[NumberGenerator()];
 
         }
-        public static char RouletteColor()
+        public static char ReyesRouletteColors()
         {
             char[] colorWheel = new char[] { 'G','G', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
                                              'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'B', 'B', 'B', 'B', 'B',
                                              'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B' };
-            Console.WriteLine($"number is: {colorWheel[RandoCol()]}");
-            return colorWheel[RandoCol()];
+            //Console.WriteLine($"number is: {colorWheel[RandoCol()]}");
+            return colorWheel[ColorGenerator()];
         }
         
         public void num()
@@ -149,8 +60,8 @@ namespace ReyesRoulette
 
         }
 
- 
-        
+
+
         /*
         public static int RouletteNum()
 
@@ -173,137 +84,220 @@ namespace ReyesRoulette
         }
         */
 
-
-        /*
-           //1. Numbers: the number of the bin
-           //2. Evens/Odds: even or odd numbers
-           //3. Reds/Blacks: red or black colored numbers
-           //4. Lows/Highs: low (1 { 18) or high (19 { 38) numbers. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
-           //5. Dozens: row thirds, 1 { 12, 13 { 24, 25 { 36
-           //6. Columns: rst, second, or third columns
-           //7. Street: rows, e.g., 1/2/3 or 22/23/24
-           //8. 6 Numbers: double rows, e.g., 1/2/3/4/5/6 or 22/23/24/25/26/26
-           //9. Split: at the edge of any two contiguous numbers, e.g., 1/2, 11/14, and 35/36
-           //10. Corner: at the intersection of any four contiguous numbers, e.g., 1/2/4/5, or 23/24/26/27
-           }
-           */
-public void IfElse()
+        //1. Numbers: the number of the bin
+        public void Bet1()
         {
-            int temp = RouletteNum();
+            int NumOrColorVar = ReyesRouletteNumbers();
+            Console.WriteLine($"You would win based off your number being {NumOrColorVar}!"); 
+        }
 
-            // int bet = Convert.ToInt32(Console.ReadLine());
-           // Console.WriteLine("The number on the wheel is " + temp);
+        //2. Evens/Odds: even or odd numbers
+        public void Bet2()
+        {
+            int NumOrColorVar = ReyesRouletteNumbers();
 
+            if (NumOrColorVar % 2 == 0)
+            { Console.WriteLine($"You would win based off your number being even!"); }
 
-            if (temp % 2 == 0)//even 
+            else
+            { Console.WriteLine($"Would Win if you bet odds."); }
+        }
+
+        //3. Reds/Blacks: red or black colored numbers
+        public void Bet3()
+        {
+            //3. Reds/Blacks: red or black colored numbers
+            char NumOrColorVar = ReyesRouletteColors();
+           
+            if (NumOrColorVar == 'R')
+            { Console.WriteLine($"You win based off the color Red"); }
+
+            else if (NumOrColorVar != 'R')
+            { Console.WriteLine($"You win based off the color Red"); }
+
+            else if (NumOrColorVar == 'G')
+            { Console.WriteLine($"You win based off the color Red "); }
+
+            else
+            {  Console.WriteLine($"You win based off the color Red "); }
+        }
+
+        //4. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
+        public void Bet4()
+        {
+            int NumOrColorVar = ReyesRouletteNumbers();
+
+            if (NumOrColorVar <= 18 && NumOrColorVar >= 0)
+            {   Console.WriteLine($"You win becuase your number is low ( 1-18). ");  }
+            else if (NumOrColorVar <= 36 && NumOrColorVar >= 19)
+            {  Console.WriteLine($"You win becuase your number is high ( 19-36). "); }
+            else
+            { Console.WriteLine("You win because your answer is 0 or 00."); }
+        }
+
+        //5. Dozens: row thirds, 1-12 , 13-24, 25-36
+        public void Bet5()
+        {
+            int NumOrColorVar = ReyesRouletteNumbers();
+
+            if (NumOrColorVar > 24 && NumOrColorVar <= 36)
+            {   Console.WriteLine($"You win becuase your number is low ( 24-36)."); }
+
+            else if (NumOrColorVar > 12 && NumOrColorVar <= 24)
+            {    Console.WriteLine($"You win becuase your number is low ( 12-24). "); }
+
+            else if (
+                NumOrColorVar >= 0 && NumOrColorVar <= 12)
+            {  Console.WriteLine($"You win becuase your number is low ( 1-12). ");   }
+
+            else
+            {   Console.WriteLine($"You win because your answer is 0 or 00. "); }
+        }
+
+        //6. Columns: first, second, or third columns
+        public void Bet6()
+        {
+            int NumOrColorVar = ReyesRouletteNumbers();
+            Console.WriteLine("Please choose column 1, 2 , or 3");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            if (num == 1)
             {
-                Console.WriteLine($"You would win based off  being even!");
+                if (NumOrColorVar % 3 == 1)
+                {
+                    Console.WriteLine($"You Won! $");
+                }
+                else
+                {
+                    Console.WriteLine($"You lost  ");
+                }
+            }
+            else if (num == 2)
+            {
+                if (NumOrColorVar % 3 == 2)
+                {
+                    Console.WriteLine($"You Won! ");
+                }
+                else
+                {
+                    Console.WriteLine($"You lost  ");
+                }
+            }
+            else if (num == 3)
+            {
+                if (NumOrColorVar % 3 == 0)
+                {
+                    Console.WriteLine($"You Won! ");
+                }
+                else if (NumOrColorVar == 0)
+                {
+                    Console.WriteLine($"You lost  ");
+                }
+                else
+                {
+                    Console.WriteLine($"You lost  ");
+                }
+            }
+        }
+
+        //7. Street: rows, e.g., 1/2/3 or 22/23/24
+        public void Bet7()
+        {
+            int NumOrColorVar = ReyesRouletteNumbers();
+            int solve = NumOrColorVar + 1;
+            int solve2 = NumOrColorVar + 2;
+
+            int solve3 = NumOrColorVar - 1;
+            int solve4 = NumOrColorVar - 2;
+
+
+            if (NumOrColorVar > 0 && NumOrColorVar <= 36)
+            {
+                Console.WriteLine($"You win based off rows {NumOrColorVar} / {solve} / {solve2} or {NumOrColorVar} / {solve3} / {solve4} ");
             }
 
             else
             {
-                Console.WriteLine($"Would Win if you bet odds.");
+                Console.WriteLine($"You win because your answer is 0 or 00. ");
             }
 
         }
 
+        //8. 6 Numbers: double rows, e.g., 1/2/3/4/5/6 or 22/23/24/25/26/26
+        public void Bet8()
+        { 
+            int NumOrColorVar = ReyesRouletteNumbers();
+            int solve = NumOrColorVar + 1;
+            int solve2 = NumOrColorVar + 2;
+            int solve3 = NumOrColorVar + 3;
+            int solve4 = NumOrColorVar + 4;
+            int solve5 = NumOrColorVar + 5;
 
-        public void Options(int choice)
+            int solve6 = NumOrColorVar - 1;
+            int solve7 = NumOrColorVar - 2;
+            int solve8 = NumOrColorVar - 3;
+            int solve9 = NumOrColorVar - 4;
+            int solve10 = NumOrColorVar - 5;
 
-        {
-            Console.WriteLine("Possible wining outcomes are: ");
-
-            switch (choice)
+            if (NumOrColorVar > 0 && NumOrColorVar <= 36)
             {
-                //1. Numbers: the number of the bin
-                case 1:
-                    
-
-
-                //2. Evens/Odds: even or odd numbers
-                case 2:
-                    //2. Evens/Odds: even or odd numbers
-                    int temp = RouletteNum();
-
-                   // int bet = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("The number on the wheel is " + temp);
-
-
-                    if (temp % 2 == 0)//even 
-                    {
-                        Console.WriteLine($"You won based off od being even!");
-                    }
-
-                    else
-                    {
-                        Console.WriteLine($"You lost!");
-                    }
-                    //PlayAgain();
-                    break;
-
-
-                //3. Reds/Blacks: red or black colored numbers
-                case 3:
-
-                    break;
-
-                //4. Lows/Highs: low (1 { 18) or high (19 { 38) numbers. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
-                case 4:
-
-                    break;
-
-                //5. Dozens: row thirds, 1 { 12, 13 { 24, 25 { 36
-                case 5:
-
-                    break;
-
-                //6. Columns: rst, second, or third columns
-                case 6:
-
-                    break;
-
-                //7. Street: rows, e.g., 1/2/3 or 22/23/24
-                case 7:
-
-                    break;
-
-                //8. 6 Numbers: double rows, e.g., 1/2/3/4/5/6 or 22/23/24/25/26/26
-                case 8:
-
-                    break;
-
-                //9. Split: at the edge of any two contiguous numbers, e.g., 1/2, 11/14, and 35/36
-                case 9:
-
-                    break;
-
-                //10. Corner: at the intersection of any four contiguous numbers, e.g., 1/2/4/5, or 23/24/26/27
-                case 10:
-
-                    break;
-                default:
-
-                    Console.Clear();
-
-                    Console.WriteLine("Invalid answer\n");
-
-                    Console.Clear();
-
-
-
-                    start();
-
-                    Console.WriteLine("Welcome.\n These ar your diffrenct options to make the game work");
-
-                    int Num = Convert.ToInt32(Console.ReadLine());
-
-                    Options(Num);
-
-                    return;
-
+                Console.WriteLine($"You win based off rows {NumOrColorVar} / {solve} / {solve2} / {solve3} / {solve4} / {solve5} or {NumOrColorVar} / {solve6} / {solve7} / {solve8} / {solve9} / {solve10} ");
+            }
+            else
+            {
+                Console.WriteLine($"You win because your answer is 0 or 00. ");
             }
 
+        }
 
+        //9. Split: at the edge of any two contiguous numbers, e.g., 1/2, 11/14, and 35/36
+        public void Bet9()
+        {
+            int temp = ReyesRouletteNumbers();
+            Console.WriteLine("For this game, you will choose two numbers for a split bet");
+            Console.Write("Choose for your first number.");
+            int num01 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Choose you second number.");
+            int num02 = Convert.ToInt32(Console.ReadLine());
+
+
+
+            if (num01 == temp || num02 == temp)
+            {
+                Console.WriteLine($"You chose {num01}/{num02}, You win ");
+            }
+            else
+            {
+                Console.WriteLine($"You chose {num01}/{num02}, You win ");
+            }
+        }
+
+        //10. Corner: at the intersection of any four contiguous numbers, e.g., 1/2/4/5, or 23/24/26/27
+        public void Bet10()
+        {
+            //10. Corner: at the intersection of any four contiguous numbers, e.g., 1/2/4/5, or 23/24/26/27
+            int temp = ReyesRouletteNumbers();
+            Console.WriteLine("For this bet, you will have to choose 4 numbers.");
+            Console.Write("Choose for your first number.");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Choose for your second number.");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Choose for your third number.");
+            int num3 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Choose for your fourth number.");
+            int num4 = Convert.ToInt32(Console.ReadLine());
+
+
+
+            if (num1 == temp || num2 == temp || num3 == temp || num4 == temp)
+            {
+                Console.WriteLine($"You Won!!!!, your numbers were {num1}/{num2}/{num3}/{num4}, you won ");
+            }
+            else
+            {
+                Console.WriteLine($"You lost, your numbers were {num1}/{num2}/{num3}/{num4}, you lost ");
+
+            }
 
         }
     }

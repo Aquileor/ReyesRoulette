@@ -15,38 +15,86 @@ namespace ReyesRoulette
             Console.WriteLine("Welcome to Reyes Roulette. \nSelect from the option below: \n");
 
            
-            new GameCode().start();
+        start();
 
-            Console.WriteLine("\nThe bets that you would win based off of your number generated is: ");
-            new GameCode().IfElse();
+            Console.WriteLine("\nThe bets that you would win based off of your number generated is: \n");
+            new GameCode().Bet1();
 
-            /*
+            Console.WriteLine("\n");
+            new GameCode().Bet2();
+    
+            Console.WriteLine("\n");
+            new GameCode().Bet3();
 
-                Console.WriteLine("\n1. Numbers: the number of the bin " + "\n2. Evens/Odds: even or odd numbers " + "\n3. Reds/Blacks: red or black numbers " +
+            Console.WriteLine("\n");
+            new GameCode().Bet4();
 
-                        "\n4. Lows/Highs: low or high numbers. " + "\n5. Dozens: row thirds. " + "\n6. Columns: First, second, or third columns" +
+            Console.WriteLine("\n");
+            new GameCode().Bet5();
 
-                        "\n7. Street: rows. " + "\n8. 6 Numbers: double rows. " + "\n9. Split: at the edge of any two contiguous numbers. " +
+            Console.WriteLine("\n");
+           // new GameCode().Bet6();
 
-                      "\n10. Corner: at the intersection of any four contiguous numbers.");
+            Console.WriteLine("\n");
+            new GameCode().Bet7();
 
-        */
+            Console.WriteLine("\n");
+             new GameCode().Bet8();
 
-            /*
-             Console.WriteLine("\n1. Start random number generator " + "2. Quit");
-            Console.WriteLine();
-           Console.Clear();
-            int me = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\n");
+            //new GameCode().Bet9();
 
-            new GameCode().start();
+            Console.WriteLine("\n");
+            // new GameCode().Bet10();
 
-           Console.WriteLine();
+            Console.WriteLine("\n");
+            RestartGame();
 
-            Console.WriteLine("Press Enter:");
-          
-            GameCode.start();
-            */
 
+        }
+        public void start()
+        {
+            string Gender = " ";
+
+            //  bool check = false;
+
+
+            {
+                Console.WriteLine("\n1. Start random number generator " + "2. Quit");
+                Console.Write("My option is: ");
+                Gender = Console.ReadLine();
+
+                switch (Gender)
+                {
+                    //1. Numbers: the number of the bin
+                    case "1":
+
+                        // Console.ReadKey();
+                        // Gamecode.num();
+                        // RouletteNum();
+                        // RouletteColor();
+
+                        //check = true;
+
+                        break;
+
+                    //2. Evens/Odds: even or odd numbers
+                    case "2":
+
+                        Console.WriteLine("Sorry. Thanks for playing.");
+                        //check = false;
+                        break;
+
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Invalid Selection. Re Enter an oprtion from the options below.");
+                        start();
+                        //check = false;
+                        break;
+                }
+
+            }
+            // return Gender;
         }
 
         //Method that gives you the option to play the game again or quit.
@@ -75,7 +123,7 @@ namespace ReyesRoulette
         public void EndGame()
         {
             Console.Clear();
-            Console.WriteLine("Hope you had fun playing Roulette.\nPress Enter to Quit...");
+            Console.WriteLine("Hope you had fun playing Roulette.");
             Console.ReadKey();
 
 
