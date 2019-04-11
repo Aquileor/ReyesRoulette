@@ -14,38 +14,29 @@ namespace ReyesRoulette
         public static int NumberGenerator()
         {
             Random random = new Random();
-            int ran = random.Next(0, 37);
-            return ran;
+            int numbers = random.Next(0, 37);
+            return numbers;
         }
         
         public static char ColorGenerator()
         {
             Random random = new Random();
-
             int ran = random.Next(0, 37);
-            char wheelcolor = (char)(ran);
-            return wheelcolor;
+            char colors = (char)(ran);
+            return colors;
         }
 
         //Listing out the number and there respective colors.
-        public static int ReyesRouletteNumbers()
-        {
-            int[] wheelNumbers = new int[] { 0, 00, 30, 7, 32, 5, 34, 3, 36, 1, 27,
-                                             25, 12, 19, 18, 21, 16, 23, 14, 11, 20, 32, 17,
-                                             22, 15, 24, 13, 10, 29, 8, 31, 6, 33, 4, 35, 2 };
-
-         //Console.WriteLine($"number is: {wheelNumbers[RandoNum()]}");
-           return wheelNumbers[NumberGenerator()];
-
-        }
-
         public static char ReyesRouletteColors()
         {
-            char[] colorWheel = new char[] { 'G','G', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
-                                             'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'B', 'B', 'B', 'B', 'B',
-                                             'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B' };
-            //Console.WriteLine($"number is: {colorWheel[RandoCol()]}");
-            return colorWheel[ColorGenerator()];
+            char[] colors = new char[] { 'G','G', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B' };
+            return colors[ColorGenerator()];
+        }
+
+        public static int ReyesRouletteNumbers()
+        {
+            int[] Numbers = new int[] { 0, 00, 30, 7, 32, 5, 34, 3, 36, 1, 27, 25, 12, 19, 18, 21, 16, 23, 14, 11, 20, 32, 17, 22, 15, 24, 13, 10, 29, 8, 31, 6, 33, 4, 35, 2 };
+            return Numbers[NumberGenerator()];
         }
 
         //This is were i create each method based off of each possible bets.
@@ -71,20 +62,19 @@ namespace ReyesRoulette
         //3. Reds/Blacks: red or black colored numbers
         public void Bet3()
         {
-            //3. Reds/Blacks: red or black colored numbers
             char NumOrColorVar = ReyesRouletteColors();
            
             if (NumOrColorVar == 'R')
             { Console.WriteLine($"You win based off the color Red"); }
 
             else if (NumOrColorVar != 'R')
-            { Console.WriteLine($"You win based off the color Red"); }
+            { Console.WriteLine($"You win based off the color Black"); }
 
             else if (NumOrColorVar == 'G')
-            { Console.WriteLine($"You win based off the color Red "); }
+            { Console.WriteLine($"You win based off the color Green "); }
 
             else
-            {  Console.WriteLine($"You win based off the color Red "); }
+            {  Console.WriteLine($"You win based off the color IDK "); }
         }
 
         //4. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
@@ -92,7 +82,7 @@ namespace ReyesRoulette
         {
             int NumOrColorVar = ReyesRouletteNumbers();
 
-            if (NumOrColorVar <= 18 && NumOrColorVar >= 0)
+            if (NumOrColorVar <= 18 && NumOrColorVar > 0)
             {   Console.WriteLine($"You win becuase your number is low ( 1-18). ");  }
             else if (NumOrColorVar <= 36 && NumOrColorVar >= 19)
             {  Console.WriteLine($"You win becuase your number is high ( 19-36). "); }
@@ -112,7 +102,7 @@ namespace ReyesRoulette
             {    Console.WriteLine($"You win becuase your number is low ( 12-24). "); }
 
             else if (
-                NumOrColorVar >= 0 && NumOrColorVar <= 12)
+                NumOrColorVar > 0 && NumOrColorVar <= 12)
             {  Console.WriteLine($"You win becuase your number is low ( 1-12). ");   }
 
             else
@@ -124,42 +114,23 @@ namespace ReyesRoulette
         {
             int NumOrColorVar = ReyesRouletteNumbers();
 
-            if (NumOrColorVar == 1)
-            {
                 if (NumOrColorVar % 3 == 1)
                 {
-                    Console.WriteLine($"You Won based off the first column ");
+                    Console.WriteLine($"You would win if you picked the first column");
                 }
-                else
+
+            else if (NumOrColorVar % 3 == 2)
                 {
-                    Console.WriteLine($"You lost  ");
-                }
+                Console.WriteLine($"You would win if you picked the second column");
             }
-            else if (NumOrColorVar == 2)
-            {
-                if (NumOrColorVar % 3 == 2)
+
+                else if (NumOrColorVar % 3 == 0)
                 {
-                    Console.WriteLine($"You Won based off the second column ");
-                }
-                else
-                {
-                    Console.WriteLine($"You lost  ");
-                }
+                Console.WriteLine($"You would win if you picked the third column");
             }
-            else if (NumOrColorVar == 3)
-            {
-                if (NumOrColorVar % 3 == 0)
-                {
-                    Console.WriteLine($"You Won based off the thrid column ");
-                }
-                else if (NumOrColorVar == 0)
-                {
-                    Console.WriteLine($"You lost  ");
-                }
                 else
-                {
-                    Console.WriteLine($"You lost  ");
-                }
+            {
+                Console.WriteLine($"You would win if you picked 0 or 00");
             }
         }
 
@@ -312,4 +283,3 @@ namespace ReyesRoulette
         }
     }
 }
-
