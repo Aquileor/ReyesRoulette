@@ -44,7 +44,7 @@ namespace ReyesRoulette
         public void Bet1()
         {
             int NumOrColorVar = ReyesRouletteNumbers();
-            Console.WriteLine($"You would win based off your number being {NumOrColorVar}!"); 
+            Console.WriteLine($"\nBet1. You would win based off your number being {NumOrColorVar}!"); 
         }
 
         //2. Evens/Odds: even or odd numbers
@@ -53,10 +53,10 @@ namespace ReyesRoulette
             int NumOrColorVar = ReyesRouletteNumbers();
 
             if (NumOrColorVar % 2 == 0)
-            { Console.WriteLine($"You would win based off your number being even!"); }
+            { Console.WriteLine($"\nBet2. You would win based off your number being even!"); }
 
             else
-            { Console.WriteLine($"Would Win if you bet odds."); }
+            { Console.WriteLine($"\nBet2. Would Win if you bet odds."); }
         }
 
         //3. Reds/Blacks: red or black colored numbers
@@ -65,16 +65,16 @@ namespace ReyesRoulette
             char NumOrColorVar = ReyesRouletteColors();
            
             if (NumOrColorVar == 'R')
-            { Console.WriteLine($"You win based off the color Red"); }
+            { Console.WriteLine($"\nBet3. You win based off the color Red"); }
 
-            else if (NumOrColorVar != 'R')
-            { Console.WriteLine($"You win based off the color Black"); }
+            else if (NumOrColorVar == 'B')
+            { Console.WriteLine($"\nBet3. You win based off the color Black"); }
 
             else if (NumOrColorVar == 'G')
-            { Console.WriteLine($"You win based off the color Green "); }
+            { Console.WriteLine($"\nBet3. You win based off the color Green "); }
 
             else
-            {  Console.WriteLine($"You win based off the color IDK "); }
+            {  Console.WriteLine($"\nBet3. You win based off the color IDK "); }
         }
 
         //4. Lows/Highs: low (1 – 18) or high (19 – 36) numbers
@@ -83,11 +83,11 @@ namespace ReyesRoulette
             int NumOrColorVar = ReyesRouletteNumbers();
 
             if (NumOrColorVar <= 18 && NumOrColorVar > 0)
-            {   Console.WriteLine($"You win becuase your number is low ( 1-18). ");  }
+            {   Console.WriteLine($"\nBet4. You win becuase your number is low ( 1-18). ");  }
             else if (NumOrColorVar <= 36 && NumOrColorVar >= 19)
-            {  Console.WriteLine($"You win becuase your number is high ( 19-36). "); }
+            {  Console.WriteLine($"\nBet4. You win becuase your number is high ( 19-36). "); }
             else
-            { Console.WriteLine("You win because your answer is 0 or 00."); }
+            { Console.WriteLine("\nBet4. You win because your answer is 0 or 00."); }
         }
 
         //5. Dozens: row thirds, 1-12 , 13-24, 25-36
@@ -96,17 +96,17 @@ namespace ReyesRoulette
             int NumOrColorVar = ReyesRouletteNumbers();
 
             if (NumOrColorVar > 24 && NumOrColorVar <= 36)
-            {   Console.WriteLine($"You win becuase your number is low ( 24-36)."); }
+            {   Console.WriteLine($"\nBet5. You win becuase your number is low ( 24-36)."); }
 
             else if (NumOrColorVar > 12 && NumOrColorVar <= 24)
-            {    Console.WriteLine($"You win becuase your number is low ( 12-24). "); }
+            {    Console.WriteLine($"\nBet5. You win becuase your number is low ( 12-24). "); }
 
             else if (
                 NumOrColorVar > 0 && NumOrColorVar <= 12)
-            {  Console.WriteLine($"You win becuase your number is low ( 1-12). ");   }
+            {  Console.WriteLine($"\nBet5. You win becuase your number is low ( 1-12). ");   }
 
             else
-            {   Console.WriteLine($"You win because your answer is 0 or 00. "); }
+            {   Console.WriteLine($"\nBet5. You win because your answer is 0 or 00. "); }
         }
 
         //6. Columns: first, second, or third columns
@@ -116,21 +116,21 @@ namespace ReyesRoulette
 
                 if (NumOrColorVar % 3 == 1)
                 {
-                    Console.WriteLine($"You would win if you picked the first column");
+                    Console.WriteLine($"\nBet6. You would win if you picked the first column");
                 }
 
             else if (NumOrColorVar % 3 == 2)
                 {
-                Console.WriteLine($"You would win if you picked the second column");
+                Console.WriteLine($"\nBet6. You would win if you picked the second column");
             }
 
                 else if (NumOrColorVar % 3 == 0)
                 {
-                Console.WriteLine($"You would win if you picked the third column");
+                Console.WriteLine($"\nBet6. You would win if you picked the third column");
             }
                 else
             {
-                Console.WriteLine($"You would win if you picked 0 or 00");
+                Console.WriteLine($"\nBet6. You would win if you picked 0 or 00");
             }
         }
 
@@ -147,12 +147,12 @@ namespace ReyesRoulette
 
             if (NumOrColorVar > 0 && NumOrColorVar <= 36)
             {
-                Console.WriteLine($"You win based off rows {NumOrColorVar} / {solve} / {solve2} or {NumOrColorVar} / {solve3} / {solve4} ");
+                Console.WriteLine($"\nBet7. You win based off rows {NumOrColorVar} / {solve} / {solve2} or {NumOrColorVar} / {solve3} / {solve4} ");
             }
 
             else
             {
-                Console.WriteLine($"You win because your answer is 0 or 00. ");
+                Console.WriteLine($"\nBet7. You win because your answer is 0 or 00. ");
             }
 
         }
@@ -175,11 +175,11 @@ namespace ReyesRoulette
 
             if (NumOrColorVar > 0 && NumOrColorVar <= 36)
             {
-                Console.WriteLine($"You win based off rows {NumOrColorVar} / {solve} / {solve2} / {solve3} / {solve4} / {solve5} or {NumOrColorVar} / {solve6} / {solve7} / {solve8} / {solve9} / {solve10} ");
+                Console.WriteLine($"\nBet8. You win based off rows {NumOrColorVar} / {solve} / {solve2} / {solve3} / {solve4} / {solve5} or {NumOrColorVar} / {solve6} / {solve7} / {solve8} / {solve9} / {solve10} ");
             }
             else
             {
-                Console.WriteLine($"You win because your answer is 0 or 00. ");
+                Console.WriteLine($"\nBet8. You win because your answer is 0 or 00. ");
             }
 
         }
@@ -196,11 +196,11 @@ namespace ReyesRoulette
 
             if (NumOrColorVar > 0 && NumOrColorVar <= 36)
             {
-                Console.WriteLine($"You win based off rows {NumOrColorVar} / {solve}  or {NumOrColorVar} / {solve2}  or {NumOrColorVar} / {solve3}   or {NumOrColorVar} / {solve4}   ");
+                Console.WriteLine($"\nBet9. You win based off rows {NumOrColorVar} / {solve}  or {NumOrColorVar} / {solve2}  or {NumOrColorVar} / {solve3}   or {NumOrColorVar} / {solve4}   ");
             }
             else
             {
-                Console.WriteLine($"You win because your answer is 0 or 00. ");
+                Console.WriteLine($"\nBet9. You win because your answer is 0 or 00. ");
             }
 
         }
@@ -221,28 +221,13 @@ namespace ReyesRoulette
 
             if (NumOrColorVar > 0 && NumOrColorVar <= 36)
             {
-                Console.WriteLine($"You win based off rows {solve4} / {solve3} / {solve} / {NumOrColorVar} or {solve3} / {solve2} / {NumOrColorVar} / {solve5}  " +
+                Console.WriteLine($"\nBet10. You win based off rows {solve4} / {solve3} / {solve} / {NumOrColorVar} or {solve3} / {solve2} / {NumOrColorVar} / {solve5}  " +
                     $"{solve} / {NumOrColorVar} / {solve6} / {solve7} or {NumOrColorVar} / {solve5} / {solve7} / {solve8}  ");
             }
             else
             {
-                Console.WriteLine($"You win because your answer is 0 or 00. ");
+                Console.WriteLine($"\nBet10. You win because your answer is 0 or 00. ");
             }
-
-
-
-            /*
-
-            if (num1 == temp || num2 == temp || num3 == temp || num4 == temp)
-            {
-                Console.WriteLine($"You Won!!!!, your numbers were {num1}/{num2}/{num3}/{num4}, you won ");
-            }
-            else
-            {
-                Console.WriteLine($"You lost, your numbers were {num1}/{num2}/{num3}/{num4}, you lost ");
-
-            }
-            */
 
         }
 
@@ -251,34 +236,24 @@ namespace ReyesRoulette
         {
             Console.WriteLine("\nThe bets that you would win based off of your number generated is: ");
 
-            Console.WriteLine("\nBet 1.");
             new GameCode().Bet1();
 
-            Console.WriteLine("\nBet 2.");
             new GameCode().Bet2();
 
-            Console.WriteLine("\nBet 3.");
             new GameCode().Bet3();
 
-            Console.WriteLine("\nBet 4.");
             new GameCode().Bet4();
 
-            Console.WriteLine("\nBet 5.");
             new GameCode().Bet5();
 
-            Console.WriteLine("\nBet 6.");
             new GameCode().Bet6();
 
-            Console.WriteLine("\nBet 7.");
             new GameCode().Bet7();
 
-            Console.WriteLine("\nBet 8.");
             new GameCode().Bet8();
 
-            Console.WriteLine("\nBet 9.");
             new GameCode().Bet9();
 
-            Console.WriteLine("\nBet 10.");
             new GameCode().Bet10();
         }
     }

@@ -13,10 +13,12 @@ namespace ReyesRoulette
         {
             start();
 
-            Console.Clear();
-            new GameCode().RunFromThisMethod();
+            //Console.Clear();
+            //new GameCode().RunFromThisMethod();
 
-            RestartGame();
+            EndGame();
+
+            //RestartGame();
         }
 
         //Method that starts the game and allows you to select a random number or quit.
@@ -24,7 +26,10 @@ namespace ReyesRoulette
         {
             Console.WriteLine("Welcome to Reyes Roulette. Select from the option below: ");
             string Gender = " ";
-            // bool check = false;
+
+            bool check = false;
+
+            while (check == false)
 
             {
                 Console.WriteLine("\n1. Start random number generator " + "2. Quit");
@@ -35,28 +40,27 @@ namespace ReyesRoulette
                 {
                     //1. Numbers: the number of the bin
                     case "1":
+                        Console.Clear();
+                        new GameCode().RunFromThisMethod();
 
-                        // Console.ReadKey();
-                        // Gamecode.num();
-                        // RouletteNum();
-                        // RouletteColor();
-
-                        //check = true;
-
+                        check = false;
                         break;
 
                     //2. Evens/Odds: even or odd numbers
                     case "2":
+                        RestartGame();
+                        //Console.WriteLine("Sorry. Thanks for playing.");
+                        //Console.ForegroundColor = ConsoleColor.Red;
 
-                        Console.WriteLine("Sorry. Thanks for playing.");
-                        //check = false;
+                        Console.WriteLine("\nThanks for playing. Duces (>^_^>) (<^_^<)\n");
+                        check = true;
                         break;
 
                     default:
                         Console.Clear();
-                        Console.WriteLine("Invalid Selection. Re Enter an oprtion from the options below.");
+                        Console.WriteLine("Invalid Selection. ReEnter an oprtion from the options below.\n");
                         start();
-                       // check = false;
+                       check = false;
                         break;
                 }
             }
@@ -67,6 +71,7 @@ namespace ReyesRoulette
         public void RestartGame()
         {
             Console.WriteLine("\nDo you want to play Roulette again: Y/N ?");
+            Console.Write("Option Selected: ");
 
             string game = Console.ReadLine();
 
@@ -77,10 +82,15 @@ namespace ReyesRoulette
             }
             else if (game != "y")
             {
-                Console.Clear();
-                Console.WriteLine("Hope you had fun playing Roulette.");
-                Console.ReadKey();
+                EndGame();
             }
         }     
+
+        public void EndGame()
+        {
+            Console.Clear();
+            Console.WriteLine("Hope you had fun playing Roulette.");
+            Console.ReadKey();
+        }
     }
 }
