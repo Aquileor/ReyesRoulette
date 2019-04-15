@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ReyesRoulette
 {
     //This is were i build the Methods to run the code from.
-    class GameCode
+   public class GameCode
     {
         //Random number Generator for the diffrent values and colors
         public static int NumberGenerator()
